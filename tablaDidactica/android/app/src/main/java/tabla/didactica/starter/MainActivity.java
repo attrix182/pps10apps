@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package tabla.didactica.starter;
 
 import android.os.Bundle;
 
