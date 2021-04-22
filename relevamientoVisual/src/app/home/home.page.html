@@ -1,20 +1,47 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+
+    <img src="../assets/rpng.png" height='300px'>
+
+    <strong>
+      <h1>Bienvenido</h1>
+    </strong>
+
+    <ion-item>
+      <ion-label position="fixed">E-mail</ion-label>
+      <ion-input type="email" [(ngModel)]="user.email"></ion-input>
+
+    </ion-item>
+    <br>
+
+
+    <ion-item>
+      <ion-label position="fixed">Password</ion-label>
+      <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+    </ion-item>
+    <br>
+
+    <div id="errorLogin">
+      <h6 id="msjError"></h6>
+    </div>
+
+    <br>
+
+    <ion-button color="dark" expand="block" (click)=onLogin()>Login</ion-button>
+    <br>
+
+
+
+
   </div>
 </ion-content>
+
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
