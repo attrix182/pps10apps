@@ -13,7 +13,7 @@ export class SplashAnimadoPage implements OnInit {
 
   ngOnInit(): void {
     setTimeout(()=>{
-     this.router.navigateByUrl("home");
+     this.router.navigateByUrl("login");
     },3000);
     
     

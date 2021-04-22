@@ -1,0 +1,54 @@
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 35%;
+  transform: translateY(-35%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+#msjError {
+
+color: red;
+animation: shakeX 1s;
+
+}
+
+ion-content.background {
+  --background: url('../../assets/fondoedificios.png')  0 0/100% 100% no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+.titulo
+{
+  font-size:xx-large;
+font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+animation:  'animate__tada' fill-mode;
+
+}
+
+.btnLogin
+{
+  color: black;
+
+}
