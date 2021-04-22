@@ -14,28 +14,19 @@ import { AlertController } from '@ionic/angular';
 export class LoginPage {
 
   user: User = new User();
+  titulo: string;
   
 
   constructor(private router: Router, private authSvc: AuthService, public alertCtrl: AlertController) {
 
     this.user.email = '';
     this.user.password = '';
+    this.titulo = 'Relevamiento Visual'
     
    }
 
   ngOnInit() { }
 
-  presentAlert() {
-    let alert = this.alertCtrl.create({
-      header: 'Error',
-      subHeader: 'Email or password invalid',
-      message: 'Try again',
-      buttons: ['OK']
-    }).then(res => {
-
-      res.present();
-    });
-  }
 
   async onLogin() {
 
@@ -53,13 +44,13 @@ export class LoginPage {
         document.getElementById('msjError').style.animation = 'none';
         document.getElementById('msjError').offsetHeight;
         document.getElementById('msjError').style.animation = null;
-        document.getElementById('msjError').textContent = 'USER NOT FOUND '
+        document.getElementById('msjError').textContent = 'USUARIO NO ENCONTRADO'
       }
       else if(this.user.email == '' || this.user.password == '') {
         document.getElementById('msjError').style.animation = 'none';
         document.getElementById('msjError').offsetHeight;
         document.getElementById('msjError').style.animation = null;
-        document.getElementById('msjError').textContent = 'EMPTY FIELDS'
+        document.getElementById('msjError').textContent = 'CAMPOS VACIOS'
       }
       
     }

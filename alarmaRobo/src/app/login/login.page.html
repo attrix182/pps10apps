@@ -1,0 +1,50 @@
+
+
+<ion-content [fullscreen]="true" padding class="background" >
+
+
+  <div id="container" >
+
+
+<!-- 
+    <img src="../assets/rpng.png" height='300px'> -->
+
+    <strong>
+      <h1 class="titulo animate__animated animate__shakeY">{{titulo}}</h1>
+    </strong>
+
+    <ion-item>
+      <ion-label position="fixed">E-mail</ion-label>
+      <ion-input type="email" [(ngModel)]="user.email"></ion-input>
+
+    </ion-item>
+    <br>
+
+
+    <ion-item>
+      <ion-label position="fixed">Clave</ion-label>
+      <ion-input type="password" [(ngModel)]="user.password" ></ion-input>
+    </ion-item>
+    <br>
+
+    <div id="errorLogin">
+      <h6 id="msjError"></h6>
+    </div>
+
+    <br>
+
+    <ion-button color="primary"  expand="block" (click)=onLogin() class=" btnLogin animate__animated  animate__backInLeft ">Iniciar Sesión</ion-button>
+    <br>
+
+
+
+  </div>
+</ion-content>
+
+
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>

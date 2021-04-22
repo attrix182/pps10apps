@@ -20,7 +20,6 @@ const routes: Routes = [
     loadChildren: () => import('./principal/principal.module').then( m => m.PrincipalPageModule)
   },
 ];
-
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
