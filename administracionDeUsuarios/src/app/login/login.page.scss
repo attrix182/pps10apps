@@ -1,0 +1,81 @@
+#container {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 65%;
+  transform: translateY(-65%);
+  background-color: rgba(255, 255, 255, 0.404);
+
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8cc9;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+
+}
+
+#msjError {
+
+color: rgb(255, 0, 0);
+animation: shakeX 1s;
+
+}
+
+
+
+
+ion-content.background {
+  --background: url('../../assets/bmg.jpg')  center center fixed no-repeat;
+  background-size: contain;
+}
+
+.titulo
+{
+  font-size:xx-large;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color:#000000;
+
+}
+
+.btnLogin
+{
+  color:#23AFD3;
+  background-color:#23AFD3;
+
+}
+
+
+ion-item {
+  --border-color: var(--ion-color-danger, #f1453d);
+}
+
+:host {
+  ion-item {
+      --border-color: white; // default underline color
+      --highlight-color-invalid: red; // invalid underline color
+      --highlight-color-valid: #23AFD3; // valid underline color
+  }
+}
+
+
+.cardLogin
+{
+
+  opacity: 0.5;
+}
+

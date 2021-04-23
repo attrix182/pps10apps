@@ -1,0 +1,13 @@
+{
+  "appId": "adm.usuarios.ls",
+  "appName": "administracionDeUsuarios",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2500
+    }
+  },
+  "cordova": {}
+}

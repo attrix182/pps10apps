@@ -6,6 +6,7 @@
   right: 0;
   top: 50%;
   transform: translateY(-67%);
+  background-color: rgba(252, 252, 252, 0.555);
 }
 
 #container strong {
@@ -18,6 +19,7 @@
   line-height: 22px;
 
   color: #8c8c8c;
+ 
 
   margin: 0;
 }
@@ -34,7 +36,7 @@ animation: shakeX 1s;
 }
 
 ion-content.background {
-  --background: url('../../assets/kids.jpg')  center center fixed no-repeat;
+  --background: url('../../assets/kid.jpg')  center center fixed no-repeat;
   background-size: contain;
 
 }
