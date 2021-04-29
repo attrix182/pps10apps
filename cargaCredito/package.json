@@ -23,9 +23,12 @@
     "@angular/router": "~11.2.0",
     "@capacitor/android": "^2.4.7",
     "@capacitor/core": "2.4.7",
+    "@ionic-native/barcode-scanner": "^5.32.1",
+    "@ionic-native/core": "^5.32.1",
     "@ionic/angular": "^5.5.2",
     "capacitor-resources": "^2.0.5",
-    "firebase": "^8.4.1",
+    "firebase": "^8.4.2",
+    "phonegap-plugin-barcodescanner": "^8.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

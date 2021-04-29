@@ -1,19 +1,69 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-button fill="solid" size="default" color="dark" (click)="Logout()" >LOGOUT</ion-button>
- 
+  <ion-toolbar color="primary">
+    <ion-button fill="solid" size="default" color="light" (click)="Logout()" style="margin: 10px;">Cerrar Sesión
+    </ion-button>
   </ion-toolbar>
-  
 </ion-header>
+
 <ion-content>
 
-  <h1></h1>
 
-  <ion-item>
-    <ion-label>Date</ion-label>
-    <ion-datetime  displayFormat="MMM DD, YYYY" [(ngModel)]="myDate"></ion-datetime>
-  </ion-item>
+  <ion-card>
+    <ion-card-header>
+      <h5 class="credito">Crédito disponible:</h5>
+
+      <div id="credito" *ngIf="esconder">
+        <h1 class="credito">${{unUsuario.credito}} <ion-icon name="eye" (click)="esconderCreditos()"></ion-icon>
+        </h1>
+      </div>
+
+      <div id="credito" *ngIf="esconder==false">
+        <h1 class="credito">$****<ion-icon name="eye-off" (click)="esconderCreditos()"></ion-icon>
+        </h1>
+      </div>
+      <br>
+      <ion-button (click)="eliminarCreditos()">Eliminar creditos</ion-button>
+    </ion-card-header>
+  </ion-card>
+  <div class="historial">
+    <ion-card>
+      <ion-card-header>
+        Ingreso $50 15:30
+      </ion-card-header>
+    </ion-card>
+  
+    <ion-card>
+      <ion-card-header>
+        Ingreso $5 14:20
+      </ion-card-header>
+    </ion-card>
+  
+    <ion-card>
+      <ion-card-header>
+        Ingreso $100 12:18
+      </ion-card-header>
+    </ion-card>
+  </div>
+
+  <ion-card>
+    <div *ngIf="scannedBarCode">
+        <ion-item>
+            Scanned code output: <strong>{{ scannedBarCode["text"] }}</strong>
+        </ion-item>
+        <ion-item>
+            Scanned code output: <strong>{{ scannedBarCode["format"] }}</strong>
+        </ion-item>
+    </div>
+  </ion-card>
 
 
 
 </ion-content>
+
+<ion-fab vertical="bottom" horizontal="center" slot="fixed">
+  <ion-fab-button color="primary" (click)="scanBRcode()">
+    <ion-icon name="camera"></ion-icon>
+  </ion-fab-button>
+
+
+

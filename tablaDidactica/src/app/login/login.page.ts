@@ -21,7 +21,7 @@ export class LoginPage {
 
     this.user.email = '';
     this.user.password = '';
-    this.titulo = 'TABLA Didactica'
+    this.titulo = 'Tabla Didactica'
     
    }
 
@@ -57,7 +57,11 @@ export class LoginPage {
 
   }
 
+  public LoginRapido() {
+    this.user.email = "invitado@invitado.com";
+    this.user.password = '123456';
 
+  }
 
   Clear() {
     this.user.email = '';

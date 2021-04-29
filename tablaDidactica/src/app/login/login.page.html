@@ -14,7 +14,7 @@
     </strong>
 
     <ion-item>
-      <ion-label position="fixed">E-mail</ion-label>
+      <ion-label position="floating" class="labelInput">E-mail</ion-label>
       <ion-input type="email" [(ngModel)]="user.email"></ion-input>
 
     </ion-item>
@@ -22,7 +22,7 @@
 
 
     <ion-item>
-      <ion-label position="fixed">Contraseña</ion-label>
+      <ion-label position="floating"  class="labelInput">Contraseña</ion-label>
       <ion-input type="password" [(ngModel)]="user.password" ></ion-input>
     </ion-item>
     <br>
@@ -33,9 +33,10 @@
 
     <br>
 
-    <ion-button color="success"  expand="block" (click)=onLogin() class=" btnLogin animate__animated  animate__backInLeft ">Iniciar Sesión</ion-button>
-    <br>
+    <ion-button color="dark" (click)=onLogin() class=" btnLogin animate__animated  animate__backInLeft ">Iniciar Sesión</ion-button>
+    <ion-button color="success" (click)=LoginRapido() class=" btnLogin animate__animated  animate__backInLeft ">Inicio Rapido</ion-button>
 
+    <br>
 
 
   </div>

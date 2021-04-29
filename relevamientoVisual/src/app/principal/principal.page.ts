@@ -14,7 +14,7 @@ export class PrincipalPage implements OnInit {
   }
 
   Logout() {
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/login');
   }
 
 }

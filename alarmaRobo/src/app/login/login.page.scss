@@ -4,8 +4,9 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 38%;
-  transform: translateY(-65%);
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.699);
 }
 
 #container strong {
@@ -22,6 +23,7 @@
   margin: 0;
 }
 
+
 #container a {
   text-decoration: none;
 }
@@ -34,8 +36,8 @@ animation: shakeX 1s;
 }
 
 ion-content.background {
-  --background: url('../../assets/bgm.jpg')  center center fixed no-repeat;
-  background-size: contain;
+  --background: url('../../assets/fondo.jpg') center;
+
 }
 
 .titulo
@@ -43,7 +45,7 @@ ion-content.background {
   font-size:xx-large;
 font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
-color:#78CAE0;
+color:#000000;
 
 }
 
@@ -53,4 +55,11 @@ color:#78CAE0;
 
 }
 
+:host {
+  ion-item {
+      --border-color: white; // default underline color
+      --highlight-color-invalid: red; // invalid underline color
+      --highlight-color-valid: #12424e; // valid underline color
+  }
+}
 

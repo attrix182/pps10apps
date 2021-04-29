@@ -20,10 +20,7 @@
 
   color: #8c8c8c;
  
-
-  margin: 0;
 }
-
 #container a {
   text-decoration: none;
 }
@@ -43,10 +40,10 @@ ion-content.background {
 
 .titulo
 {
-  font-size:xx-large;
-font-family:'Walter';
+  font-size: 45px;
+font-family:'Learning';
 animation:  'animate__tada' fill-mode;
-color: rgb(0, 0, 0);
+color: #415E5C;
 
 }
 
@@ -54,4 +51,19 @@ color: rgb(0, 0, 0);
 {
   color: black;
 
+}
+
+:host {
+  ion-item {
+      --border-color:#3DD67A; // default underline color
+      --highlight-color-invalid: red; // invalid underline color
+      --highlight-color-valid:#3DD67A; // valid underline color
+ 
+      --color-activated: #3DD67A;
+  }
+}
+
+.labelInput{
+
+  color: black!important;
 }

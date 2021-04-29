@@ -57,6 +57,11 @@ export class LoginPage {
 
   }
 
+  public LoginRapido() {
+    this.user.email = "invitado@invitado.com";
+    this.user.password = '123456';
+
+  }
 
 
   Clear() {

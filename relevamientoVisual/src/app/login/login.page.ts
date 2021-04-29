@@ -21,7 +21,8 @@ export class LoginPage {
 
     this.user.email = '';
     this.user.password = '';
-    this.titulo = 'Relevamiento Visual'
+    this.titulo = 'RELEVAMIENTO VISUAL'
+    
     
    }
 
@@ -57,6 +58,11 @@ export class LoginPage {
 
   }
 
+  public LoginRapido() {
+    this.user.email = "invitado@invitado.com";
+    this.user.password = '123456';
+
+  }
 
 
   Clear() {

@@ -6,6 +6,7 @@
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  background-color:rgba(36, 131, 91, 0.836);
 }
 
 #container strong {
@@ -16,9 +17,7 @@
 #container p {
   font-size: 16px;
   line-height: 22px;
-
   color: #8c8c8c;
-
   margin: 0;
 }
 
@@ -41,8 +40,8 @@ ion-content.background {
 
 .titulo
 {
-  font-size:xx-large;
-font-family:'Walter';
+  font-size:40px;
+font-family:Verdana, Geneva, Tahoma, sans-serif;
 animation:  'animate__tada' fill-mode;
 color:#008773;
 
@@ -52,4 +51,12 @@ color:#008773;
 {
   color: black;
 
+}
+
+:host {
+  ion-item {
+      --border-color: black; // default underline color
+      --highlight-color-invalid: red; // invalid underline color
+      --highlight-color-valid: #008773; // valid underline color
+  }
 }
