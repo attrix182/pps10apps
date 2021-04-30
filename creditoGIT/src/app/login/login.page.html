@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+      <ion-title  class="tituloHeader">
+        Inicio
+       </ion-title>
+    </ion-toolbar>
+  </ion-header> 
+
+<ion-content class="login" >
+ 
+    <!-- <ion-card-header style="text-align: center;">Carga Crédito</ion-card-header> -->
+    
+    <form class="form" [formGroup] = "loginForm" (ngSubmit)="submit()">
+      <ion-list> 
+    <ion-item>
+      <ion-label>Usuario: </ion-label>
+      <ion-input [(ngModel)]= "user.correo" formControlName="correo" name="correo" type="text"></ion-input>
+    </ion-item>
+    <div *ngFor= "let error of errorMessages.correo">
+      <ng-container *ngIf= "correo.hasError(error.type) && (correo.dirty || correo.touched)">
+        <small class="error-message">{{error.message}}</small>
+      </ng-container>
+    </div>
+    
+    <ion-item>
+      <ion-label>Contraseña: </ion-label>
+      <ion-input [(ngModel)]= "user.clave" formControlName="clave" name="clave" type="password"></ion-input>
+    </ion-item>
+    <div *ngFor= "let error of errorMessages.clave">
+      <ng-container *ngIf= "clave.hasError(error.type) && (clave.dirty || clave.touched)">
+        <small class="error-message">{{error.message}}</small>
+      </ng-container>
+    </div>
+
+    <ion-button color="light" style="margin-left: 35%;" (click)="Ingresar()" [disabled] = "loginForm.invalid" >Ingresar</ion-button><br>
+    <ion-button shape="round" expand="block" sh [routerLink]="['/registro']"  class="registro">Registrarse</ion-button >
+  </ion-list>
+  </form>
+
+      <button class="boton_1" id="1" (click)="IngresarTest($event)">ADMIN</button> 
+      <button style="margin-left: 58%;"  class="boton_1"  id="2" (click)="IngresarTest($event)">INVITADO</button>
+      <button class="boton_1"  id="3" (click)="IngresarTest($event)">USUARIO</button>
+      <button style="margin-left: 58%;"  class="boton_1"  id="4" (click)="IngresarTest($event)">ANÓNIMO</button>
+      <button class="boton_1"  id="5" (click)="IngresarTest($event)" >TESTER</button>
+</ion-content>

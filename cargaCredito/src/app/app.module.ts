@@ -23,7 +23,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot({ animated: false }), AppRoutingModule,
-    ReactiveFormsModule, AngularFireModule, AngularFireModule.initializeApp(environment.firebaseConfig), AngularFireDatabaseModule
+    ReactiveFormsModule, AngularFireModule, AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, BarcodeScanner,
     { 

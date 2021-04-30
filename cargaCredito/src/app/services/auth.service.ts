@@ -23,6 +23,7 @@ export class AuthService {
 
   async onLogin(user: User) {
     try {
+      localStorage.setItem('user',user.email)
       return await this.afAuth.signInWithEmailAndPassword(user.email, user.password)
     } catch (error) {
       console.log('ERROR', error)

@@ -1,38 +1,40 @@
 import { Creditos } from './../clases/creditos';
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore/';
-
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database'
 
 @Injectable({
   providedIn: 'root'
 })
 export class CreditoService {
 
-  rutaDeLaColeccion = '/credito';
-  referenciaAlaColeccion: AngularFirestoreCollection<Creditos>;
-  referenciaBd: AngularFirestore;
+  rutaDeLaColeccion = '/users';
+  referenciaAlaColeccion: AngularFireList<Creditos>;
 
 
-  constructor(private bd: AngularFirestore) {
-    this.referenciaBd = bd;
-    this.referenciaAlaColeccion = bd.collection(this.rutaDeLaColeccion);
+
+  constructor(private bd: AngularFireDatabase) {
+
+    this.referenciaAlaColeccion = bd.list(this.rutaDeLaColeccion);
+
 
   }
 
 
-  Crear(credito: Creditos): any {
+  Cargar(credito: Creditos): any {
     
-    return this.referenciaAlaColeccion.add({ ...credito });
+    return this.referenciaAlaColeccion.update('3',  { credito: credito.credito });
 
   }
 
   public TraerTodos() {
-    return this.referenciaAlaColeccion;
+    return this.referenciaAlaColeccion
   }
 
 
-  public BuscarActor(credito: Creditos) {
-    return this.referenciaBd.collection(this.rutaDeLaColeccion, ref => ref.where("usuario", "==", credito.usuario));
+
+
+  public BuscarCredito(credito: Creditos) {
+    return this.referenciaAlaColeccion.push(credito);
   }
 
 

@@ -1,0 +1,161 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+
+.welcome-card ion-img {
+  max-height: 70vh;
+  overflow: hidden;
+}
+
+.btnGigante{
+  height: 20%; 
+  width: 90%; 
+  margin: 5% 5% 0% 5%; 
+  border-radius: 5px; 
+  border: 2px solid; 
+  font-size: 150%; 
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: 2px; 
+  position: relative;   
+}
+
+.imgSplash{
+  border-radius: 20%;
+  width: 50%;
+  height: 50%;
+  max-height:15vh;
+  max-width:15vh;
+}
+
+#custom-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100000;
+  width:100%;
+  // background-color: #d88629;
+  background:url('assets/fondo_splash.png') no-repeat center / cover;
+}
+
+.flb {
+  background:url('assets/fondo_splash.png') no-repeat center / cover;
+  height:100%;
+  width:100%;
+  animation: pulse 1s linear forwards;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes pulse {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+.Aligner-item {
+  max-width: 100%;
+}
+.Aligner-item--top {
+  align-self: flex-start;
+}
+.Aligner-item--bottom {
+  align-self: flex-end;
+}
+
+
+#custom-overlay .imgSplashMovimiento {
+  z-index:  9999;
+  position: absolute;
+  // display: block;
+  width: 100%;
+  top: 35%;
+  left: 0%;
+  height: auto;
+  animation-name: escaneando;
+   animation: escaneando 3100ms linear infinite both;
+  animation-delay: 1s;
+}
+
+
+ @keyframes escaneando {
+  from {
+    z-index: 9999;
+    top: 37%;
+  }
+  10% {
+    top: 0%;
+  }
+  20% {
+    top: 37%;
+  }
+  30% {
+    top: 0%;
+  }
+  40% {
+    top: 37%;
+  }
+  50% {
+    top: 0%;
+  }
+  60% {
+    top: 0%;
+  }
+  70% {
+    top: 37%;
+  }
+  80% {
+    top: 0%;
+  }
+  90% {
+    top: 37%;
+  }
+  100% {
+    top: 37%;
+  }
+  to {
+    top: 0%;
+  }
+}
+
+.infoAlumno{
+  border-radius: 10%;
+  margin: 120% 30% 0% 0%;
+  padding: 0% 10% 0% 10%;
+  color:black;
+  background-color: white;
+  font-size: 20px;
+  font-family: 'Exo', sans-serif;
+}
+
+.splash {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: green;
+}
+
+.spiner {
+     width: 22vw; 
+        height: 22vw;
+        background-color: white;
+
+}
+

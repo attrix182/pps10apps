@@ -7,7 +7,6 @@
 
 <ion-content>
 
-
   <ion-card>
     <ion-card-header>
       <h5 class="credito">Crédito disponible:</h5>
@@ -48,11 +47,13 @@
   <ion-card>
     <div *ngIf="scannedBarCode">
         <ion-item>
-            Scanned code output: <strong>{{ scannedBarCode["text"] }}</strong>
-        </ion-item>
-        <ion-item>
-            Scanned code output: <strong>{{ scannedBarCode["format"] }}</strong>
-        </ion-item>
+         Monto: <strong>{{ this.monto }}</strong>
+      </ion-item>
+      <ion-item>
+        Credito: <strong>{{ this.unUsuario.credito}}</strong>
+    </ion-item>
+        <ion-fab-button color="primary" (click)="CargarCredito()">
+        </ion-fab-button>
     </div>
   </ion-card>
 
@@ -64,6 +65,7 @@
   <ion-fab-button color="primary" (click)="scanBRcode()">
     <ion-icon name="camera"></ion-icon>
   </ion-fab-button>
+
 
 
 

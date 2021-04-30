@@ -37,6 +37,7 @@ export class LoginPage {
     const user = await this.authSvc.onLogin(this.user)
     if (user) {
       console.log('Logueado!!');
+      
       this.router.navigateByUrl('/principal');
     }
     else {

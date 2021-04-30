@@ -1,0 +1,78 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button
+        style="font-family: Arial, Helvetica, sans-serif;"
+        defaultHref="/"
+        text="Regresar"
+        color="primary"
+        mode="ios">
+      </ion-back-button>
+      </ion-buttons>
+      <ion-title class="tituloHeader">
+       Registro
+         <ion-icon class="ionIcon" src="./assets/sign-out-alt-solid.svg" (click)="salir()"></ion-icon>
+       </ion-title>
+    </ion-toolbar>
+  </ion-header> 
+
+<ion-content>
+
+  <form #form="ngForm" [formGroup] = "registrationForm" (ngSubmit)="logForm()" >
+    <ion-list>
+  <ion-item>
+    <ion-label>Nombre</ion-label>
+    <ion-input [(ngModel)]= "user.nombre" name="nombre" formControlName= "nombre" inputmode="text" ngControl="nombre" placeholder="Nombre"></ion-input>
+  </ion-item>
+  <div *ngFor= "let error of errorMessages.nombre">
+    <ng-container *ngIf= "nombre.hasError(error.type) && (nombre.dirty || nombre.touched)">
+      <small class="error-message">{{error.message}}</small>
+    </ng-container>
+  </div>
+
+  <ion-item>
+    <ion-label>Apellido</ion-label>
+    <ion-input ngControl="apellido" [(ngModel)]= "user.apellido" name="apellido" formControlName= "apellido" placeholder="Apellido"></ion-input>
+  </ion-item>
+  <div *ngFor= "let error of errorMessages.apellido">
+    <ng-container *ngIf= "apellido.hasError(error.type) && (apellido.dirty || apellido.touched)">
+      <small class="error-message">{{error.message}}</small>
+    </ng-container>
+  </div>
+
+  <ion-item>
+    <ion-label>Email</ion-label>
+    <ion-input ngControl="email" [(ngModel)]= "user.email" name="email"  formControlName= "email" placeholder="Email"></ion-input>
+  </ion-item>
+  <div *ngFor= "let error of errorMessages.email">
+    <ng-container *ngIf= "email.hasError(error.type) && (email.dirty || email.touched)">
+      <small class="error-message">{{error.message}}</small>
+    </ng-container>
+  </div>
+
+  <ion-item>
+    <ion-label>Clave</ion-label>
+    <ion-input ngControl="clave" type="password" [(ngModel)]= "user.clave" name="clave" formControlName= "clave" placeholder="Clave"></ion-input>
+  </ion-item>
+  <div *ngFor= "let error of errorMessages.clave">
+    <ng-container *ngIf= "clave.hasError(error.type) && (clave.dirty || clave.touched)">
+      <small class="error-message">{{error.message}}</small>
+    </ng-container>
+  </div>
+
+  <ion-item>
+    <ion-label>Repetir Clave</ion-label>
+    <ion-input ngControl="repetirClave" type="password" [(ngModel)]= "user.repetirClave" name="repetirClave" formControlName= "repetirClave" placeholder="Repetir clave"></ion-input>
+  </ion-item>
+  <div *ngFor= "let error of errorMessages.repetirClave">
+    <ng-container *ngIf= "repetirClave.errors?.MatchPassword && (repetirClave.hasError(error.type) && (repetirClave.dirty || repetirClave.touched))">
+      <small class="error-message">{{error.message}}</small>
+    </ng-container>
+  </div><br>
+</ion-list>
+</form><br>
+
+    <ion-button (click)="Registrar(form)" [disabled] = "registrationForm.invalid"  color="dark"  style="margin-left: 32%;">Registrarme</ion-button>
+
+</ion-content>
+

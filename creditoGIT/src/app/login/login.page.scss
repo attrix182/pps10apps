@@ -1,0 +1,19 @@
+
+  .boton_1{
+    text-decoration: none;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 250;
+    font-size: 22px;
+    
+    /* color: #006505; */
+    background-color: #635cc9;
+    border-radius: 70px;
+    border: 8px double black;
+  }
+  .boton_1:hover{
+    opacity: 0.6;
+    text-decoration: none;
+  }

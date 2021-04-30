@@ -1,0 +1,28 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "LectorQR",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {
+    "preferences": {
+      "ScrollEnabled": "false",
+      "BackupWebStorage": "none",
+      "SplashMaintainAspectRatio": "true",
+      "FadeSplashScreenDuration": "0",
+      "ShowSplashScreen": "false",
+      "SplashShowOnlyFirstTime": "false",
+      "SplashScreen": "screen",
+      "SplashScreenDelay": "0"
+    }
+  },
+  "server": {
+    "url": "http://192.168.0.17:8100",
+    "cleartext": true
+  }
+}

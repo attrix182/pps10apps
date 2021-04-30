@@ -1,0 +1,13 @@
+<div id="custom-overlay" [style.display]="showSplash ? 'flex': 'none'">
+  <div class="flb">
+    <div class="Aligner-item Aligner-item--top"></div>
+    <img src="../assets/lineaRoja.png" class="imgSplashMovimiento"> 
+    <div class="Aligner-item Aligner-item--bottom"></div>
+  </div>
+</div>
+
+<ion-app>
+  <div [style.display]="showSplash ? 'none': 'flex'">
+    <ion-router-outlet></ion-router-outlet>
+  </div>
+</ion-app>
