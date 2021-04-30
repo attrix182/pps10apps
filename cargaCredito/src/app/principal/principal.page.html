@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-button fill="solid" size="default" color="light" (click)="Logout()" style="margin: 10px;">Cerrar Sesión
+  <ion-toolbar color="success">
+    <ion-button fill="solid" size="default" color="success" (click)="Logout()" style="margin: 10px;">Cerrar Sesión
     </ion-button>
   </ion-toolbar>
 </ion-header>
@@ -21,7 +21,7 @@
         </h1>
       </div>
       <br>
-      <ion-button (click)="eliminarCreditos()">Eliminar creditos</ion-button>
+      <ion-button color='danger' (click)="eliminarCreditos()">Eliminar creditos</ion-button>
     </ion-card-header>
   </ion-card>
   <div class="historial">
@@ -52,7 +52,7 @@
       <ion-item>
         Credito: <strong>{{ this.unUsuario.credito}}</strong>
     </ion-item>
-        <ion-fab-button color="primary" (click)="CargarCredito()">
+        <ion-fab-button color="success" (click)="CargarCredito()">
         </ion-fab-button>
     </div>
   </ion-card>
@@ -62,9 +62,11 @@
 </ion-content>
 
 <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-  <ion-fab-button color="primary" (click)="scanBRcode()">
+  <ion-fab-button color="success" (click)="scanBRcode()">
     <ion-icon name="camera"></ion-icon>
   </ion-fab-button>
+
+
 
 
 

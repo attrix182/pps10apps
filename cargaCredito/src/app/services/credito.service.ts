@@ -10,8 +10,6 @@ export class CreditoService {
   rutaDeLaColeccion = '/users';
   referenciaAlaColeccion: AngularFireList<Creditos>;
 
-
-
   constructor(private bd: AngularFireDatabase) {
 
     this.referenciaAlaColeccion = bd.list(this.rutaDeLaColeccion);
@@ -21,17 +19,23 @@ export class CreditoService {
 
 
   Cargar(credito: Creditos): any {
-    
-    return this.referenciaAlaColeccion.update('3',  { credito: credito.credito });
+
+    var carga = credito.id.toString();
+
+    return this.referenciaAlaColeccion.update(carga, { credito: credito.credito});
 
   }
 
-  public TraerTodos() {
-    return this.referenciaAlaColeccion
+  public TraerTodos():AngularFireList<Creditos> {
+    return this.referenciaAlaColeccion;
   }
 
+  traerCredito() {
+    //? Que base de datos afectaremos? Jugadores.
+    //? El id del jugador que deseamos eliminar.
+    this.bd.list('/users').snapshotChanges();
 
-
+  }
 
   public BuscarCredito(credito: Creditos) {
     return this.referenciaAlaColeccion.push(credito);
