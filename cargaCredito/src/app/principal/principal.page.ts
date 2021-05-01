@@ -3,8 +3,7 @@ import { CreditoService } from './../services/credito.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
 import { BarcodeScanner, BarcodeScannerOptions } from "@ionic-native/barcode-scanner/ngx";
-import { Observable } from 'rxjs';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { ToastController } from '@ionic/angular';
 
 
 @Component({
@@ -24,7 +23,7 @@ export class PrincipalPage implements OnInit {
 
   usuarioLogeado: any;
 
-  constructor(private router: Router, private scanner: BarcodeScanner, private creditoSvc: CreditoService) {
+  constructor(private router: Router, private scanner: BarcodeScanner, private creditoSvc: CreditoService, public toastController: ToastController) {
     this.unUsuario = new Creditos();
 
     this.unUsuario.usuario = localStorage.getItem('user');
@@ -35,6 +34,8 @@ export class PrincipalPage implements OnInit {
 
     this.esconder = false; //PUSE TRUE
     this.encodedData = "Programming isn't about what you know";
+    
+    console.log(this.unUsuario)
 
     this.barcodeScannerOptions = {
       showTorchButton: true,
@@ -43,6 +44,18 @@ export class PrincipalPage implements OnInit {
 
 
   }
+
+  
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'Ese codigo ya fue redimido.',
+      duration: 2000,
+      position: 'bottom',
+      cssClass: 'toast-custom-class'
+    });
+    toast.present();
+  }
+
 
 
   scanBRcode() {
@@ -58,6 +71,7 @@ export class PrincipalPage implements OnInit {
 
 
 
+
   ngOnInit() { }
 
 
@@ -66,9 +80,15 @@ export class PrincipalPage implements OnInit {
   Logout() {
     localStorage.removeItem('user');
 
+    this.esconder = false; //PUSE TRUE
     this.monto = 0;
+    this.unUsuario.id = -1;
+    this.unUsuario.usuario = "nadie";
     this.unUsuario.credito = 0;
-
+    this.unUsuario.cargo10 = 0;
+    this.unUsuario.cargo100 = 0;
+    this.unUsuario.cargo50 = 0;
+    console.log(this.unUsuario)
     this.router.navigateByUrl('/');
 
 
@@ -77,6 +97,18 @@ export class PrincipalPage implements OnInit {
   mostrarCredito() {
     this.unUsuario.credito = this.creditoSvc.userLog.credito
     console.log(this.unUsuario.credito)
+
+    this.unUsuario.cargo10 = this.creditoSvc.userLog.cargo10
+    console.log(this.unUsuario.credito)
+
+    this.unUsuario.cargo50 = this.creditoSvc.userLog.cargo50
+    console.log(this.unUsuario.credito)
+
+    this.unUsuario.cargo100 = this.creditoSvc.userLog.cargo100
+    console.log(this.unUsuario.credito)
+
+
+
   }
 
 
@@ -163,9 +195,7 @@ export class PrincipalPage implements OnInit {
           } else {
 
             this.unUsuario.credito = this.unUsuario.credito - this.monto;
-
-
-            alert('ya cargaste este codigo');
+            this.presentToast();
 
           }
           break;
@@ -180,7 +210,7 @@ export class PrincipalPage implements OnInit {
             });
           } else {
             this.unUsuario.credito = this.unUsuario.credito - this.monto;
-            alert('ya cargaste este codigo')
+            this.presentToast();
           }
           break;
 
@@ -194,7 +224,7 @@ export class PrincipalPage implements OnInit {
             });
           } else {
             this.unUsuario.credito = this.unUsuario.credito - this.monto;
-            alert('ya cargaste este codigo')
+            this.presentToast();
           }
           break;
 
@@ -226,7 +256,7 @@ export class PrincipalPage implements OnInit {
 
             this.unUsuario.credito = this.unUsuario.credito - this.monto;
 
-            alert('ya cargaste este codigo');
+            this.presentToast();
 
           }
           break;
@@ -249,7 +279,7 @@ export class PrincipalPage implements OnInit {
           }
           else {
             this.unUsuario.credito = this.unUsuario.credito - this.monto;
-            alert('ya cargaste este codigo')
+            this.presentToast();
           }
           break;
 
@@ -270,7 +300,7 @@ export class PrincipalPage implements OnInit {
 
           } else {
             this.unUsuario.credito = this.unUsuario.credito - this.monto;
-            alert('ya cargaste este codigo')
+            this.presentToast();
           }
           break;
 
@@ -281,6 +311,10 @@ export class PrincipalPage implements OnInit {
     }
   }
 
+
+
+
+  
 
 }
 

@@ -42,7 +42,7 @@ export class CreditoService {
   traerCredito(id:number)  {
 
     this.bd.object('users/'+id).valueChanges().subscribe(val =>{ 
-    console.log(val);
+  //  console.log(val);
     this.userLog = val;
   });
 
