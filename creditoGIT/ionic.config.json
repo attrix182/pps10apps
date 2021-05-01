@@ -1,8 +1,0 @@
-{
-  "name": "LectorQR",
-  "integrations": {
-    "cordova": {},
-    "capacitor": {}
-  },
-  "type": "angular"
-}

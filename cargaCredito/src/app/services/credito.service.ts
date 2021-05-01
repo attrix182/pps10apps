@@ -1,6 +1,8 @@
 import { Creditos } from './../clases/creditos';
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database'
+import { NumericValueAccessor } from '@ionic/angular';
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +11,10 @@ export class CreditoService {
 
   rutaDeLaColeccion = '/users';
   referenciaAlaColeccion: AngularFireList<Creditos>;
+  saldo:any
+
+  public userLog:any;
+
 
   constructor(private bd: AngularFireDatabase) {
 
@@ -22,24 +28,42 @@ export class CreditoService {
 
     var carga = credito.id.toString();
 
-    return this.referenciaAlaColeccion.update(carga, { credito: credito.credito});
+    return this.referenciaAlaColeccion.update(carga, { credito: credito.credito}),
+     this.referenciaAlaColeccion.update(carga, { cargo10: credito.cargo10 }),
+     this.referenciaAlaColeccion.update(carga, { cargo50: credito.cargo50 }),
+     this.referenciaAlaColeccion.update(carga, { cargo100: credito.cargo100 });
 
   }
 
-  public TraerTodos():AngularFireList<Creditos> {
+  public TraerTodos(): AngularFireList<Creditos> {
     return this.referenciaAlaColeccion;
   }
+  
+  traerCredito(id:number)  {
 
-  traerCredito() {
-    //? Que base de datos afectaremos? Jugadores.
-    //? El id del jugador que deseamos eliminar.
-    this.bd.list('/users').snapshotChanges();
+    this.bd.object('users/'+id).valueChanges().subscribe(val =>{ 
+    console.log(val);
+    this.userLog = val;
+  });
 
-  }
+
+}
+    
+test()  {
+
+  return 1;
+
+}
 
   public BuscarCredito(credito: Creditos) {
-    return this.referenciaAlaColeccion.push(credito);
-  }
+  return this.referenciaAlaColeccion.push(credito);
+}
+
+
+retornoUser(user:any):Creditos
+{
+return user;
+}
 
 
 }

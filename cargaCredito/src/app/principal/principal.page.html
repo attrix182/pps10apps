@@ -12,9 +12,10 @@
       <h5 class="credito">Crédito disponible:</h5>
 
       <div id="credito" *ngIf="esconder">
-        <h1 class="credito">${{unUsuario.credito}} <ion-icon name="eye" (click)="esconderCreditos()"></ion-icon>
+        <h1 class="credito" *ngIf="unUsuario">${{unUsuario.credito}} <ion-icon name="eye" (click)="esconderCreditos()"></ion-icon>
         </h1>
       </div>
+      
 
       <div id="credito" *ngIf="esconder==false">
         <h1 class="credito">$****<ion-icon name="eye-off" (click)="esconderCreditos()"></ion-icon>
@@ -24,25 +25,6 @@
       <ion-button color='danger' (click)="eliminarCreditos()">Eliminar creditos</ion-button>
     </ion-card-header>
   </ion-card>
-  <div class="historial">
-    <ion-card>
-      <ion-card-header>
-        Ingreso $50 15:30
-      </ion-card-header>
-    </ion-card>
-  
-    <ion-card>
-      <ion-card-header>
-        Ingreso $5 14:20
-      </ion-card-header>
-    </ion-card>
-  
-    <ion-card>
-      <ion-card-header>
-        Ingreso $100 12:18
-      </ion-card-header>
-    </ion-card>
-  </div>
 
   <ion-card>
     <div *ngIf="scannedBarCode">
@@ -52,8 +34,9 @@
       <ion-item>
         Credito: <strong>{{ this.unUsuario.credito}}</strong>
     </ion-item>
-        <ion-fab-button color="success" (click)="CargarCredito()">
-        </ion-fab-button>
+        <ion-button color="success" (click)="CargarCredito()">
+          Impactar recarga
+        </ion-button>
     </div>
   </ion-card>
 
