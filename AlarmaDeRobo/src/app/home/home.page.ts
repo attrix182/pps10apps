@@ -74,6 +74,7 @@ export class HomePage implements OnInit{
           this.estado = "";
           this.clave = "";
           this.showDialog = false;
+          this.audio.pause();
           this.parar(); ///Paro la subscripcion al acceleration
           this.ClaveErroreas = 0;
         }, 1000);

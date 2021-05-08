@@ -1,19 +1,23 @@
 <ion-content >
-  <body style="background-color: #0d37f3;">
+
+  <ion-toolbar>
+    <ion-fab-button size="small" color="danger"  (click)="salir()"><ion-icon name="exit"></ion-icon></ion-fab-button>
+  </ion-toolbar>
+  <body style="background-color: #415E5C;">
     
 
-      <ion-fab vertical="bottom" horizontal="end"  slot="fixed" style="margin-bottom: 13%;" >
+      <ion-fab horizontal="start" vertical="bottom" slot="fixed"  style="margin: 65px;">
         <ion-fab-button  size="small">
           <ion-icon src={{manejadora.pathFotoJuego}}></ion-icon>
         </ion-fab-button>  
-        <ion-fab-list side="start">
+        <ion-fab-list side="end">
           <ion-fab-button (click)="CambiarJuego('colores')"><ion-icon src="assets/colores/icon.svg"></ion-icon></ion-fab-button>
           <ion-fab-button (click)="CambiarJuego('numeros')"><ion-icon src="assets/numeros/icon.svg"></ion-icon></ion-fab-button>
           <ion-fab-button (click)="CambiarJuego('animales')"><ion-icon src="assets/animales/icon.svg"></ion-icon></ion-fab-button>      
         </ion-fab-list>
       </ion-fab>
-    
-      <ion-fab vertical="bottom" horizontal="end"  slot="fixed" >
+      
+      <ion-fab horizontal="end" vertical="bottom" slot="fixed" style="margin: 65px;">
         <ion-fab-button  size="small">
           <ion-icon src={{manejadora.pathFotoIdioma}}></ion-icon>
         </ion-fab-button>  
@@ -24,8 +28,6 @@
         </ion-fab-list>
       </ion-fab>
      
-    
-      
         <ion-grid >      
           <ion-row >
             <ion-col size="6" size-lg *ngFor="let unCuadro of manejadora.listaCuadros">

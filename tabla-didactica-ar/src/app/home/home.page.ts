@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { Idioma,EtipoJuego, EtipoIdioma } from '../clases/idioma/idioma';
 
@@ -13,7 +14,7 @@ export class HomePage {
   public tipoJuego:string;
   
 
-  constructor() 
+  constructor(private router:Router) 
   {
      this.manejadora = new Idioma();
   }
@@ -44,6 +45,13 @@ export class HomePage {
           break;
       
       }
+  }
+
+  salir(){
+    localStorage.removeItem('user');
+
+    this.router.navigateByUrl('/login')
+
   }
 
   public CambiarJuego(tipoJuego:string)

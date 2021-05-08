@@ -1,4 +1,4 @@
-package Tabla.Didactica.AJR;
+package Tabla.Didactica.ls;
 
 import android.os.Bundle;
 

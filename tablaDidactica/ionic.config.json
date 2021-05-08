@@ -1,7 +1,0 @@
-{
-  "name": "tablaDidactica",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}

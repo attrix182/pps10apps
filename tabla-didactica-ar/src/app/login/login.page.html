@@ -1,59 +1,63 @@
-<ion-header >
-  <ion-toolbar color="primary">
-    <ion-title>Ingresar</ion-title>
-    
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true" >
-<body class="container">
-  
-    <ion-item style="margin-top: 1%;" class="margin" color="dark" >
-      <ion-label position="stacked">Correo:</ion-label>
-      <ion-input type="email" placeholder="Ingrese su Correo" [(ngModel)]="user.email"></ion-input>
+ <ion-item>
+  <ion-label>Cuentas guardadas</ion-label>
+  <!-- <ion-select [(ngModel)]="value" (ionChange)=“selecCuenta($event)> -->
+  <ion-select interface="popover" value="" #C [(ngModel)]="user.email" (ionChange)="selecCuenta(C.value)">
+    <ion-select-option [value]="">admin@admin.com</ion-select-option>
+    <ion-select-option [value]="">invitado@invitado.com</ion-select-option>
+    <ion-select-option [value]="">usuario@usuario.com</ion-select-option>
+    <ion-select-option [value]="">anonimo@anonimo.com</ion-select-option>
+    <ion-select-option [value]="">tester@tester.com</ion-select-option>
+  </ion-select>
+</ion-item>
+
+
+<ion-content [fullscreen]="true" padding class="background" >
+
+
+  <div id="container" >
+
+
+<!-- 
+    <img src="../assets/rpng.png" height='300px'> -->
+
+    <strong>
+      <h1 class="titulo animate__animated animate__rollIn">  📖{{titulo}}</h1>
+    </strong>
+
+    <ion-item>
+      <ion-label position="floating" class="labelInput">Correo:</ion-label>
+      <ion-input type="email" [(ngModel)]="user.email"></ion-input>
+
     </ion-item>
-    
-    <ion-item color="dark" class="margin" >
-      <ion-label position="stacked">Contraseña:</ion-label>
-      <ion-input type="Password" placeholder="Ingrese su contraseña" [(ngModel)]="user.password"></ion-input>
+    <br>
+
+
+    <ion-item>
+      <ion-label position="floating"  class="labelInput">Contraseña:</ion-label>
+      <ion-input type="password" [(ngModel)]="user.password" ></ion-input>
     </ion-item>
-    
-    <ion-button class="margin" style="margin-top: 60%;" color="primary"size="block" (click)="onLogin()">Ingresar</ion-button>
-    <ion-button class="margin" color="danger" size="block">Registrarse</ion-button>  
+    <br>
 
-      <ion-row vertical="bottom" horizontal="end"  slot="fixed" >
-        <ion-col size="4" align="left" class="ion-no-padding ion-no-margin">
-          <ion-button color="dark" size="block" (click)="login_Anonimo()">Anonimo</ion-button>
-        </ion-col>
-        <ion-col size="4" align="left" class="ion-no-padding ion-no-margin">
-          <ion-button color="dark" size="block" (click)="login_Invitado()">Invitado</ion-button>
-        </ion-col>
-        <ion-col size="4" class="ion-no-padding ion-no-margin">
-          <ion-button color="dark" size="block" (click)="login_Usuario()">Usuario</ion-button>
-        </ion-col>
-      </ion-row>
-      
-      <ion-row class="ion-margin-horizontal">
-        <ion-col  class="ion-no-padding ">
-          <ion-button color="dark" size="block" (click)="login_Admin()">Admin</ion-button>
-        </ion-col>
-        <ion-col class="ion-no-padding ">
-            <ion-button color="dark" size="block" (click)="login_Tester()">Tester</ion-button>
-        </ion-col>
-      </ion-row>
-  
-</body>
-  
-    
-        
-    
-    
-    
+    <div id="errorLogin">
+      <h6 id="msjError"></h6>
+    </div>
 
-  
+    <br>
 
-  
+    <ion-button color="dark" (click)=onLogin() class=" btnLogin animate__animated  animate__backInLeft ">Iniciar Sesión</ion-button>
+   
 
+    <br>
+
+
+  </div>
 </ion-content>
 
 
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>

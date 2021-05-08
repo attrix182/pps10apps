@@ -1,23 +1,70 @@
-.container {
+#container {
+    text-align: center;
   
-    height: 100%;
-    background: url("https://blogs.iadb.org/desarrollo-infantil/wp-content/uploads/sites/18/2019/07/Post_PP-POSTEO.png") center;
-    background-repeat: no-repeat;
-     background-position: center center;
-     background-size: cover;
-}
-
-.backgroundInput
-{
-    background: red;
-}
-
-.margin{
-    margin-left: 2%;
-    margin-right: 2%;
-}
-
-.imagen{
-
-}
-
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-67%);
+    background-color: rgba(252, 252, 252, 0.555);
+  }
+  
+  #container strong {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  #container p {
+    font-size: 16px;
+    line-height: 22px;
+  
+    color: #8c8c8c;
+   
+  }
+  #container a {
+    text-decoration: none;
+  }
+  
+  #msjError {
+  
+  color: red;
+  animation: shakeX 1s;
+  
+  }
+  
+  ion-content.background {
+    --background: url('../../assets/kid.jpg')  center center fixed no-repeat;
+    background-size: contain;
+  
+  }
+  
+  .titulo
+  {
+    font-size: 40px;
+  font-family:'Learning';
+  animation:  'animate__tada' fill-mode;
+  color: #000000;
+  
+  }
+  
+  
+  .btnLogin
+  {
+    color: black;
+  
+  }
+  
+  :host {
+    ion-item {
+        --border-color:#3DD67A; // default underline color
+        --highlight-color-invalid: red; // invalid underline color
+        --highlight-color-valid:#3DD67A; // valid underline color
+   
+        --color-activated: #3DD67A;
+    }
+  }
+  
+  .labelInput{
+  
+    color: black!important;
+  }

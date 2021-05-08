@@ -11,12 +11,14 @@ import { AutentificacionService } from '../servicios/autentificacion.service';
 export class LoginPage implements OnInit {
   public user:Usuario;
   public flag:boolean;
+  public titulo:string;
 
 
   constructor(private router:Router , private authSvc :AutentificacionService) 
   {
     this.user=new Usuario();
     this.flag=false;
+    this.titulo = 'Tabla Didactica'
   }
 
   ngOnInit(){}
@@ -33,6 +35,40 @@ export class LoginPage implements OnInit {
     else
     {
       this.flag=true;
+    }
+  }
+
+
+  selecCuenta(cuenta) {
+    switch (cuenta) {
+      case "admin@admin.com": {
+        this.user.password = "111111";
+        this.user.email = "admin@admin.com";
+        break;
+      }
+      case "invitado@invitado.com": {
+        this.user.password = "222222";
+        this.user.email = "invitado@invitado.com";
+        break;
+      }
+      case "usuario@usuario.com": {
+        this.user.password = "333333";
+        this.user.email = "usuario@usuario.com";
+        break;
+      }
+      case "anonimo@anonimo.com": {
+        this.user.password = "444444";
+        this.user.email = "anonimo@anonimo.com";
+        break;
+      }
+      case "tester@tester.com": {
+        this.user.password = "555555";
+        this.user.email = "tester@tester.com";
+        break;
+      }
+      default: {
+        break;
+      }
     }
   }
 
