@@ -246,9 +246,8 @@ export class PrincipalPage implements OnInit {
           if (this.unUsuario.cargo100 == 0) {
 
             this.unUsuario.cargo100 = 1;
-
             this.creditoSvc.Cargar(this.unUsuario).then(() => {
-              console.log('se envio la recarga');
+              console.log('se envio la recarga');            
               this.monto = 0;
             });
           } else if (this.unUsuario.cargo100 == 1) {
