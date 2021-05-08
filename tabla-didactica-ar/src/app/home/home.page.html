@@ -1,0 +1,55 @@
+<ion-content >
+  <body style="background-color: #0d37f3;">
+    
+
+      <ion-fab vertical="bottom" horizontal="end"  slot="fixed" style="margin-bottom: 13%;" >
+        <ion-fab-button  size="small">
+          <ion-icon src={{manejadora.pathFotoJuego}}></ion-icon>
+        </ion-fab-button>  
+        <ion-fab-list side="start">
+          <ion-fab-button (click)="CambiarJuego('colores')"><ion-icon src="assets/colores/icon.svg"></ion-icon></ion-fab-button>
+          <ion-fab-button (click)="CambiarJuego('numeros')"><ion-icon src="assets/numeros/icon.svg"></ion-icon></ion-fab-button>
+          <ion-fab-button (click)="CambiarJuego('animales')"><ion-icon src="assets/animales/icon.svg"></ion-icon></ion-fab-button>      
+        </ion-fab-list>
+      </ion-fab>
+    
+      <ion-fab vertical="bottom" horizontal="end"  slot="fixed" >
+        <ion-fab-button  size="small">
+          <ion-icon src={{manejadora.pathFotoIdioma}}></ion-icon>
+        </ion-fab-button>  
+        <ion-fab-list side="start">
+          <ion-fab-button (click)="CambiarIdioma('español')"><ion-icon src="assets/banderas/españa.svg"></ion-icon></ion-fab-button>
+          <ion-fab-button (click)="CambiarIdioma('ingles')"><ion-icon src="assets/banderas/eeuu.svg"></ion-icon></ion-fab-button>
+          <ion-fab-button (click)="CambiarIdioma('portugues')"><ion-icon src="assets/banderas/brasil.svg"></ion-icon></ion-fab-button>      
+        </ion-fab-list>
+      </ion-fab>
+     
+    
+      
+        <ion-grid >      
+          <ion-row >
+            <ion-col size="6" size-lg *ngFor="let unCuadro of manejadora.listaCuadros">
+                <ion-button color={{unCuadro.colorBoton}} expand="block" style="width: 100%; height: 170px;" (click)="Reproducir(unCuadro.pathSonido)">
+                  <ion-grid>
+                    <ion-row *ngIf="!(manejadora.tipoJuego==0 || manejadora.tipoJuego=='colores')">
+                      <ion-col>
+                        <ion-img src={{unCuadro.pathFoto}}></ion-img>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col>
+                        {{unCuadro.texto}}
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                </ion-button>
+            </ion-col>
+    
+          </ion-row>
+        </ion-grid>
+    
+    
+  </body>
+  
+
+</ion-content>

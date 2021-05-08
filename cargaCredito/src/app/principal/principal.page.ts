@@ -32,7 +32,7 @@ export class PrincipalPage implements OnInit {
 
     creditoSvc.traerCredito(this.unUsuario.id);
 
-    this.esconder = false; //PUSE TRUE
+    this.esconder = true; //TRUE VISIBLE, FALSE NO VISIBLES
     this.encodedData = "Programming isn't about what you know";
 
     console.log(this.unUsuario)
@@ -74,7 +74,13 @@ export class PrincipalPage implements OnInit {
 
 
 
-  ngOnInit() { }
+  ngOnInit() {
+
+    setTimeout(()=>{
+      this.mostrarCredito();
+    },1000);
+
+   }
 
 
 

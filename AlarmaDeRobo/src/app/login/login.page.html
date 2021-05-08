@@ -1,0 +1,49 @@
+<!-- Include in <head> to load fonts from Google -->
+<link href='https://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lato:100italic' rel='stylesheet' type='text/css'>
+
+
+<ion-content [fullscreen]="true" padding class="background" >
+  <div id="header">
+    <h2 class="had-r1"> <b>Alarma de robo</b></h2>
+    <ion-icon class="iconPri" name="person"></ion-icon>
+  </div>
+ 
+ 
+ 
+  <form [formGroup]="registrationForm" (ngSubmit)="submit()">
+    <ion-list class="list">
+      <ion-item>
+        <ion-input formControlName="email" type="text" placeholder="Correo" [ngModel]="this.user.email"></ion-input>
+      </ion-item>
+  
+
+      <br>
+      <ion-item>
+        <ion-input formControlName="password" type="password" placeholder="Clave" [ngModel]="this.user.password"></ion-input>
+      </ion-item>
+
+
+    </ion-list>
+    <br>
+    <br>
+    <ion-button class="btnLogin" [disabled]="!registrationForm.valid" type="submit" expand="block" shape="round"
+      (click)="onLogin()">Entrar</ion-button>
+
+   
+    <br>
+    <ion-fab vertical="bottom" horizontal="left" slot="fixed">
+      <ion-fab-button>
+        <ion-icon name="albums-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="end">
+        <ion-fab-button (click)="LoginFast(0)"><ion-icon name="person-outline"></ion-icon></ion-fab-button>
+        <ion-fab-button (click)="LoginFast(1)"><ion-icon name="person"></ion-icon></ion-fab-button>
+        <ion-fab-button (click)="LoginFast(2)"><ion-icon name="person-outline"></ion-icon></ion-fab-button>
+        <ion-fab-button (click)="LoginFast(3)"><ion-icon name="person"></ion-icon></ion-fab-button>
+        <ion-fab-button (click)="LoginFast(4)"><ion-icon name="person-outline"></ion-icon></ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+  
+  </form>
+</ion-content>

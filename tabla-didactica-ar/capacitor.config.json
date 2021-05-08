@@ -1,0 +1,14 @@
+{
+  "appId": "Tabla.Didactica.AJR",
+  "appName": "Tabla Didactica",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 3000
+    }
+  },
+  "cordova": {}
+ 
+}

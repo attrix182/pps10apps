@@ -1,0 +1,59 @@
+<ion-header >
+  <ion-toolbar color="primary">
+    <ion-title>Ingresar</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" >
+<body class="container">
+  
+    <ion-item style="margin-top: 1%;" class="margin" color="dark" >
+      <ion-label position="stacked">Correo:</ion-label>
+      <ion-input type="email" placeholder="Ingrese su Correo" [(ngModel)]="user.email"></ion-input>
+    </ion-item>
+    
+    <ion-item color="dark" class="margin" >
+      <ion-label position="stacked">Contraseña:</ion-label>
+      <ion-input type="Password" placeholder="Ingrese su contraseña" [(ngModel)]="user.password"></ion-input>
+    </ion-item>
+    
+    <ion-button class="margin" style="margin-top: 60%;" color="primary"size="block" (click)="onLogin()">Ingresar</ion-button>
+    <ion-button class="margin" color="danger" size="block">Registrarse</ion-button>  
+
+      <ion-row vertical="bottom" horizontal="end"  slot="fixed" >
+        <ion-col size="4" align="left" class="ion-no-padding ion-no-margin">
+          <ion-button color="dark" size="block" (click)="login_Anonimo()">Anonimo</ion-button>
+        </ion-col>
+        <ion-col size="4" align="left" class="ion-no-padding ion-no-margin">
+          <ion-button color="dark" size="block" (click)="login_Invitado()">Invitado</ion-button>
+        </ion-col>
+        <ion-col size="4" class="ion-no-padding ion-no-margin">
+          <ion-button color="dark" size="block" (click)="login_Usuario()">Usuario</ion-button>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row class="ion-margin-horizontal">
+        <ion-col  class="ion-no-padding ">
+          <ion-button color="dark" size="block" (click)="login_Admin()">Admin</ion-button>
+        </ion-col>
+        <ion-col class="ion-no-padding ">
+            <ion-button color="dark" size="block" (click)="login_Tester()">Tester</ion-button>
+        </ion-col>
+      </ion-row>
+  
+</body>
+  
+    
+        
+    
+    
+    
+
+  
+
+  
+
+</ion-content>
+
+

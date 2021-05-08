@@ -1,0 +1,18 @@
+{
+  "targets": {
+    "myapp-6555e": {
+      "hosting": {
+        "app": [
+          "myapp-6555e"
+        ]
+      }
+    },
+    "apps-4902b": {
+      "hosting": {
+        "app": [
+          "apps-4902b"
+        ]
+      }
+    }
+  }
+}
