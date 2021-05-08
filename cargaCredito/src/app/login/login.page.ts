@@ -28,7 +28,6 @@ export class LoginPage {
 
   ngOnInit() { }
 
-
   async onLogin() {
 
     document.getElementById('msjError').textContent = ''

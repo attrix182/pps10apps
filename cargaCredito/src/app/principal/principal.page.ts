@@ -34,7 +34,7 @@ export class PrincipalPage implements OnInit {
 
     this.esconder = false; //PUSE TRUE
     this.encodedData = "Programming isn't about what you know";
-    
+
     console.log(this.unUsuario)
 
     this.barcodeScannerOptions = {
@@ -55,6 +55,8 @@ export class PrincipalPage implements OnInit {
     });
     toast.present();
   }
+
+
 
 
 
@@ -171,6 +173,9 @@ export class PrincipalPage implements OnInit {
       case "ae338e4e0cbb4e4bcffaf9ce5b409feb8edd5172 ":
         return 50;
         break;
+        default:
+          return 0;
+          break;
     }
 
   }
@@ -244,12 +249,14 @@ export class PrincipalPage implements OnInit {
 
             this.creditoSvc.Cargar(this.unUsuario).then(() => {
               console.log('se envio la recarga');
+              this.monto = 0;
             });
           } else if (this.unUsuario.cargo100 == 1) {
 
             this.unUsuario.cargo100 = 2;
             this.creditoSvc.Cargar(this.unUsuario).then(() => {
               console.log('se envio la recarga');
+              this.monto = 0;
             });
 
           } else {
@@ -268,12 +275,14 @@ export class PrincipalPage implements OnInit {
 
             this.creditoSvc.Cargar(this.unUsuario).then(() => {
               console.log('se envio la recarga');
+              this.monto = 0;
             });
           } else if (this.unUsuario.cargo50 == 1) {
 
             this.unUsuario.cargo50 = 2;
             this.creditoSvc.Cargar(this.unUsuario).then(() => {
               console.log('se envio la recarga');
+              this.monto = 0;
             });
 
           }
@@ -290,12 +299,14 @@ export class PrincipalPage implements OnInit {
 
             this.creditoSvc.Cargar(this.unUsuario).then(() => {
               console.log('se envio la recarga');
+              this.monto = 0;
             });
           } else if (this.unUsuario.cargo10 == 1) {
 
             this.unUsuario.cargo10 = 2;
             this.creditoSvc.Cargar(this.unUsuario).then(() => {
               console.log('se envio la recarga');
+              this.monto = 0;
             });
 
           } else {

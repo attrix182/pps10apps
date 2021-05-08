@@ -5,7 +5,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true" padding class="background">
 
   <ion-card>
     <ion-card-header>
@@ -27,18 +27,23 @@
     </ion-card-header>
   </ion-card>
 
-  <ion-card>
+  <ion-card *ngIf="this.monto != null">
     <div *ngIf="scannedBarCode">
       <ion-item>
         Monto a cargar: <strong>{{ this.monto }}</strong>
       </ion-item>
-      <ion-button color="success" (click)="CargarCredito()">
+      <ion-button color="success" (click)="CargarCredito()" style="padding: 5px;">
         Impactar recarga
       </ion-button>
     </div>
+
+
+
+    
+
   </ion-card>
 
-  <strong class="actividadTitulo"> Tu actividad:</strong>
+
   <ion-card *ngIf="esconder">
     <div *ngIf="unUsuario.cargo10">
       <ion-item>
@@ -72,13 +77,11 @@
     </div>
 
     <div *ngIf="unUsuario.credito== 0">
-      <ion-card>
-        <ion-item>
-          <br>
-          <strong>Aun no hay recargas</strong>
-          <br>
-        </ion-item>
-      </ion-card>
+      <ion-item>
+        <br>
+        <strong>Aun no hay recargas</strong>
+        <br>
+      </ion-item>
 
     </div>
 
@@ -100,7 +103,15 @@
 
 </ion-content>
 
-<ion-fab vertical="bottom" horizontal="center" slot="fixed">
-  <ion-fab-button color="success" (click)="scanBRcode()">
-    <ion-icon name="camera"></ion-icon>
-  </ion-fab-button>
+<ion-card>
+  <ion-item>
+    <strong>RECARGA QR</strong>
+
+    <ion-fab  horizontal="center">
+      <ion-fab-button color="success" (click)="scanBRcode()">
+        <ion-icon name="camera"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+  </ion-item>
+</ion-card>

@@ -1,10 +1,19 @@
 .credito{
 
     color: black;
+    font-size: 35px;
 
   
 }
 
 .actividadTitulo{
     padding: 20px;
+}
+
+
+
+ion-content.background {
+    --background: url('../../assets/fondo.jpg')   center no-repeat;
+    background-size: contain;
+
 }
