@@ -1,0 +1,62 @@
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 41%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+#msjError {
+
+color: red;
+animation: shakeX 1s;
+
+}
+
+
+ion-content.background {
+  --background: url('../../assets/bmg.jpg')  center center fixed repeat;
+  background-size: contain;
+}
+
+
+.titulo
+{
+  font-size:xx-large;
+font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+color:#000000;
+
+}
+
+.btnLogin
+{
+  color: rgb(0, 0, 0);
+
+}
+
+.closed {
+  color:rgb(0, 0, 0);
+  
+  --highlight-background: transparent;
+}

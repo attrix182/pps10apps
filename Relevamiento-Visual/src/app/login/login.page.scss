@@ -1,0 +1,51 @@
+.tituloLogin {
+  overflow: hidden;
+}
+
+.login {
+  width: 20rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+.card{
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    border: none;
+    color: black;
+}
+.ion-header{
+    border: none;
+}
+
+
+#msjError {
+  display: none;
+}
+#drop1{
+  border-radius: 20px;
+}
+.msjError{
+    text-align: center;
+    background-color: #ffffff00;
+    color: #A12732;
+    width: 15rem;
+
+    font-size: large;
+}
+
+.aligncenter {
+  text-align: center;
+}
+
+
+ion-content.background {
+  --background: url("../../assets/img/photo3.png")center center fixed no-repeat;
+  background-size: contain;
+  @media only screen and (max-height: 800px) {
+      --background: url("../../assets/img/photo3.png")center center fixed no-repeat;
+  background-size: contain;
+    }
+}

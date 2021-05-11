@@ -1,0 +1,84 @@
+<ion-header>
+
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <div class="row">
+      <div class="col text-left">
+        <ion-title>{{title}} {{emoji}}</ion-title>
+      </div>
+      <div class="col text-right">
+        <ion-button color="danger" (click)="usuarioSrv.deslogearUsuario()">
+          <ion-icon name="exit"> </ion-icon>
+        </ion-button>
+      </div>
+    </div>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true" padding class="background">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-grid *ngFor="let photo of imagenesRT; index as position">
+    <div *ngIf="verFotosLindas==true">
+      <ion-card *ngIf='photo.esLinda=="true"'>
+        <ion-card-header>
+          <ion-card-subtitle>{{photo.usuario}}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-item>
+          <ion-img [src]="photo.referencia"></ion-img>
+        </ion-item>
+        <ion-card-content>
+          Votos:{{photo.votos}}
+          <ion-icon [name]="cambiarFoto(photo)" size="large" (click)="setLike(photo)"></ion-icon>
+      
+        </ion-card-content>
+      </ion-card>
+    </div>
+    <div *ngIf="verFotosLindas==false">
+      <ion-card *ngIf='photo.esLinda=="false"'>
+        <ion-card-header>
+          <ion-card-subtitle>{{photo.usuario}}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-item>
+          <ion-img [src]="photo.referencia"></ion-img>
+        </ion-item>
+        <ion-card-content>
+          Votos:{{photo.votos}}
+          <ion-icon [name]="cambiarFoto(photo)" size="large" (click)="setLike(photo)"></ion-icon>
+      
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </ion-grid>
+
+
+</ion-content>
+
+  <ion-footer >
+
+  <ion-toolbar color="warning">
+
+    <div >
+    <ion-buttons>
+      <ion-fab>
+        <ion-fab-button (click)="addPhotoToGallery()" color="dark" style="margin: 285%;">
+          <ion-icon name="camera"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ion-buttons>
+  </div>
+    <ion-buttons slot="end" routerLink='../misfotos'>
+      <ion-button>Mis fotos
+      <ion-icon name="person"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-footer>
+

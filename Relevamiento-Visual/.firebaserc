@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ionicfirebaseutn": {
+      "hosting": {
+        "app": [
+          "ionicfirebaseutn"
+        ]
+      }
+    }
+  }
+}

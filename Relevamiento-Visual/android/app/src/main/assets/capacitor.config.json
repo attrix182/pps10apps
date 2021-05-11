@@ -1,0 +1,13 @@
+{
+  "appId": "com.releVisual.ls",
+  "appName": "relevamientoVisual",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2500
+    }
+  },
+  "cordova": {}
+}

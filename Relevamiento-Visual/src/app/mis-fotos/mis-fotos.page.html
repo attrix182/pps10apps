@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <div class="row">
+      <div class="col text-right">
+        <ion-title>{{title}}📷</ion-title>
+      </div>
+      <div class="col text-right">
+        <ion-button color="danger" (click)="usuarioSrv.deslogearUsuario()">
+          <ion-icon name="exit"> </ion-icon>
+        </ion-button>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" padding class="background">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-grid *ngFor="let photo of imagenesRT; index as position">
+    <div>
+      <ion-card *ngIf='photo.usuario== user.correo'>
+        <ion-card-header>
+          <ion-card-subtitle>{{photo.usuario}}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-item>
+          <ion-img [src]="photo.referencia"></ion-img>
+        </ion-item>
+        <ion-card-content>
+        
+          Votos:{{photo.votos}}
+        </ion-card-content>
+      </ion-card>
+    </div>
+   
+  </ion-grid>
+
+
+</ion-content>
+
+  <ion-footer>
+
+  <ion-toolbar color="warning" >
+
+
+    <div >
+      <ion-buttons>
+
+      </ion-buttons>
+    </div>
+      <ion-buttons slot="end" >
+        <ion-button>Galería
+        <ion-back-button name="exit" defaultHref="this.title"></ion-back-button>
+        </ion-button>
+      </ion-buttons>
+  
+      <ion-title></ion-title>
+    </ion-toolbar>
+  </ion-footer>
+  
+
+  

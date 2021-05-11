@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">relevamientoVisual</string>
-    <string name="title_activity_main">relevamientoVisual</string>
-    <string name="package_name">rel.visual.test</string>
-    <string name="custom_url_scheme">rel.visual.test</string>
-</resources>

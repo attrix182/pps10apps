@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Conversando en el aula</string>
+    <string name="title_activity_main">Conversando en el aula</string>
+    <string name="package_name">com.conversandoEnElAula.ls</string>
+    <string name="custom_url_scheme">com.conversandoEnElAula.ls</string>
+</resources>
