@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "apps-4902b": {
+      "hosting": {
+        "app": [
+          "apps-4902b"
+        ]
+      }
+    }
+  }
+}

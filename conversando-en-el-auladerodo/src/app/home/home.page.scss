@@ -1,0 +1,28 @@
+
+.texto{
+  color: #FFF;
+  margin-top: 35%;
+  text-align: center;
+  font-weight: 700;
+  font-size: xxx-large;
+}
+
+.aulaA{
+  background: linear-gradient(0deg,#f87af2b3, rgba(0,0,0,0.1)),
+  url("../../assets/fondo2.jpg") no-repeat center center / cover;
+}   
+
+.aulaB{
+  background: linear-gradient(0deg,#62a9d8b3, rgba(0,0,0,0.1)),
+  url("../../assets/fondo3.jpg") no-repeat center center / cover;
+}
+
+.boton{
+  width: 100%;
+  height: 50%;
+  margin: inherit;
+
+  border-radius: 20px;
+}
+
+
