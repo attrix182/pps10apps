@@ -4,14 +4,12 @@
   <ion-grid *ngIf="!showDialog">
     <ion-row>
       <ion-col size="12">
-        <ion-label class="textInfo">Posicion del celular: {{this.posicionActualCelular}}</ion-label>
+        <br>
         <ion-icon *ngIf="presionado" name="pause" id="btnStart" (click)="btnActivarODesactivar()"></ion-icon>
         <br>
-        <ion-label class="textInfo" *ngIf="presionado">Alarma activada!!</ion-label>
+       
         <ion-icon *ngIf="!presionado" name="play-outline" id="btnStop" (click)="btnActivarODesactivar()"></ion-icon>
-        <br>
-        <ion-label class="textInfo" *ngIf="!presionado">Presione para Activar</ion-label>
-        <br>
+
 
       </ion-col>
     </ion-row>

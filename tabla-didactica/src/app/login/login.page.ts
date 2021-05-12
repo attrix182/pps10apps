@@ -18,7 +18,7 @@ export class LoginPage implements OnInit {
   {
     this.user=new Usuario();
     this.flag=false;
-    this.titulo = 'Tabla Didactica'
+    this.titulo = 'Tabla Didáctica'
   }
 
   ngOnInit(){}

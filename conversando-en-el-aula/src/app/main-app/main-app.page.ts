@@ -43,6 +43,9 @@ export class MainAppPage implements OnInit {
     this.chats = this.conexion.ObtenerTodos();
   }
 
+
+
+
   ngOnInit() {
     this.ObtenerMensajes();
   }

@@ -10,6 +10,7 @@
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
+  
   <ion-grid>
     <ion-row *ngFor="let item of this.listaMensajes | async">
       <ion-col size="9" *ngIf="item.usuario != this.usuarioActual"> 

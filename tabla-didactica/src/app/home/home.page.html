@@ -1,37 +1,43 @@
 <ion-content >
 
-  <ion-toolbar>
-    <ion-fab-button size="small" color="danger"  (click)="salir()"><ion-icon name="exit"></ion-icon></ion-fab-button>
+  <ion-toolbar class="tool">
+
+    <ion-fab-button size="small" color="danger"  (click)="salir()" style="margin: auto;"><ion-icon name="exit"></ion-icon></ion-fab-button>
+
+
+
   </ion-toolbar>
+
+  <ion-fab horizontal="start" vertical="top" >
+    <ion-fab-button  size="large">
+      <ion-icon src={{manejadora.pathFotoIdioma}}></ion-icon>
+    </ion-fab-button>  
+    <ion-fab-list side="bottom">
+      <ion-fab-button (click)="CambiarIdioma('español')"><ion-icon src="assets/banderas/españa.svg"></ion-icon></ion-fab-button>
+      <ion-fab-button (click)="CambiarIdioma('ingles')"><ion-icon src="assets/banderas/eeuu.svg"></ion-icon></ion-fab-button>
+      <ion-fab-button (click)="CambiarIdioma('portugues')"><ion-icon src="assets/banderas/brasil.svg"></ion-icon></ion-fab-button>      
+    </ion-fab-list>
+  </ion-fab>
+
+
+  <ion-fab horizontal="end" vertical="top" >
+    <ion-fab-button  size="large">
+      <ion-icon src={{manejadora.pathFotoJuego}}></ion-icon>
+    </ion-fab-button>  
+    <ion-fab-list side="bottom">
+      <ion-fab-button (click)="CambiarJuego('colores')"><ion-icon src="assets/colores/icon.svg"></ion-icon></ion-fab-button>
+      <ion-fab-button (click)="CambiarJuego('numeros')"><ion-icon src="assets/numeros/icon.svg"></ion-icon></ion-fab-button>
+      <ion-fab-button (click)="CambiarJuego('animales')"><ion-icon src="assets/animales/icon.svg"></ion-icon></ion-fab-button>      
+    </ion-fab-list>
+  </ion-fab>
+
+
   <body style="background-color: #415E5C;">
     
-
-      <ion-fab horizontal="start" vertical="bottom" slot="fixed"  style="margin: 65px;">
-        <ion-fab-button  size="small">
-          <ion-icon src={{manejadora.pathFotoJuego}}></ion-icon>
-        </ion-fab-button>  
-        <ion-fab-list side="end">
-          <ion-fab-button (click)="CambiarJuego('colores')"><ion-icon src="assets/colores/icon.svg"></ion-icon></ion-fab-button>
-          <ion-fab-button (click)="CambiarJuego('numeros')"><ion-icon src="assets/numeros/icon.svg"></ion-icon></ion-fab-button>
-          <ion-fab-button (click)="CambiarJuego('animales')"><ion-icon src="assets/animales/icon.svg"></ion-icon></ion-fab-button>      
-        </ion-fab-list>
-      </ion-fab>
-      
-      <ion-fab horizontal="end" vertical="bottom" slot="fixed" style="margin: 65px;">
-        <ion-fab-button  size="small">
-          <ion-icon src={{manejadora.pathFotoIdioma}}></ion-icon>
-        </ion-fab-button>  
-        <ion-fab-list side="start">
-          <ion-fab-button (click)="CambiarIdioma('español')"><ion-icon src="assets/banderas/españa.svg"></ion-icon></ion-fab-button>
-          <ion-fab-button (click)="CambiarIdioma('ingles')"><ion-icon src="assets/banderas/eeuu.svg"></ion-icon></ion-fab-button>
-          <ion-fab-button (click)="CambiarIdioma('portugues')"><ion-icon src="assets/banderas/brasil.svg"></ion-icon></ion-fab-button>      
-        </ion-fab-list>
-      </ion-fab>
-     
         <ion-grid >      
           <ion-row >
             <ion-col size="6" size-lg *ngFor="let unCuadro of manejadora.listaCuadros">
-                <ion-button color={{unCuadro.colorBoton}} expand="block" style="width: 100%; height: 170px;" (click)="Reproducir(unCuadro.pathSonido)">
+                <ion-button color={{unCuadro.colorBoton}} expand="block"  (click)="Reproducir(unCuadro.pathSonido)">
                   <ion-grid>
                     <ion-row *ngIf="!(manejadora.tipoJuego==0 || manejadora.tipoJuego=='colores')">
                       <ion-col>
@@ -39,9 +45,6 @@
                       </ion-col>
                     </ion-row>
                     <ion-row>
-                      <ion-col>
-                        {{unCuadro.texto}}
-                      </ion-col>
                     </ion-row>
                   </ion-grid>
                 </ion-button>
@@ -55,3 +58,8 @@
   
 
 </ion-content>
+
+<ion-footer>
+
+
+</ion-footer>

@@ -1,24 +1,27 @@
-.fondo {
-    height: 100%;
-    
-  background-color: #415E5C
-}
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
+*{
   margin: 0;
+  padding: 0;
 }
 
-#container a {
-  text-decoration: none;
+
+ion-button{
+  width: 100%;
+  height: 31.33333333vh;
+  border: 2px solid black;
+
 }
 
+ion-img{
+  width: 100%;
+  height: 18.03333333vh;
+}
+
+.tool{
+  --min-height:20%!important;
+
+  }
+
+
+  

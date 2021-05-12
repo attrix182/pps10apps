@@ -4,11 +4,8 @@ import { INumero,NUMEROS } from './../numeros/numeros';
 import { COLORES } from "../colores/colores";
 import { Cuadro } from "../Cuadro/cuadro";
 
-
-
 export enum EtipoJuego{ colores,numeros,animales}
 export enum EtipoIdioma{ español,ingles,portugues}
-
 
 
 export class Idioma 
@@ -20,7 +17,7 @@ export class Idioma
 
    public pathFotoIdioma:string;
    public pathFotoJuego:string;
-   public tipoJuego:EtipoJuego;
+   public tipoJuego:any;
    public idiomaActual:EtipoIdioma;   
    
    public constructor()
